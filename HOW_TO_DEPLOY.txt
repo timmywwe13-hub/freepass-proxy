@@ -1,0 +1,70 @@
+==============================================
+  HOW TO PUT FREEPASS ONLINE (Free Hosting)
+==============================================
+
+You will use two free websites:
+  • GitHub  — stores your code
+  • Render  — runs your server online
+
+No credit card needed for either one.
+
+----------------------------------------------
+STEP 1 — Make a free GitHub account
+----------------------------------------------
+1. Go to https://github.com
+2. Click "Sign up" — use any email
+3. Verify your email
+
+----------------------------------------------
+STEP 2 — Upload your files to GitHub
+----------------------------------------------
+1. Go to https://github.com/new
+2. Repository name: freepass-proxy
+3. Set it to "Public"
+4. Click "Create repository"
+5. On the next page click "uploading an existing file"
+6. Drag and drop these 3 files:
+     - server.js
+     - index.html
+     - package.json
+7. Click "Commit changes"
+
+----------------------------------------------
+STEP 3 — Deploy on Render (free hosting)
+----------------------------------------------
+1. Go to https://render.com
+2. Click "Get Started" → sign up with your GitHub account
+3. Click "New +" → "Web Service"
+4. Connect your GitHub account if asked
+5. Find "freepass-proxy" in the list → click Connect
+6. Fill in these settings:
+     Name:         freepass-proxy  (or anything you want)
+     Runtime:      Node
+     Build Command: (leave blank)
+     Start Command: node server.js
+     Plan:          Free
+7. Click "Create Web Service"
+8. Wait 2-3 minutes while it builds
+
+----------------------------------------------
+STEP 4 — Get your URL
+----------------------------------------------
+After it finishes building, Render gives you a URL like:
+   https://freepass-proxy.onrender.com
+
+That's your personal proxy! Share it with anyone.
+Open it on your Chromebook, phone, anything — it works!
+
+----------------------------------------------
+NOTES
+----------------------------------------------
+• Free Render servers "sleep" after 15 min of no use
+  — first visit after sleeping takes ~30 seconds to wake up
+  — after that it's fast
+
+• To keep it always awake (optional):
+  Go to your service on Render → Settings → 
+  add a "Health Check" URL of /
+
+• Your URL is public — anyone who has it can use it
+==============================================
